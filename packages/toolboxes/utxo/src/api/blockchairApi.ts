@@ -35,6 +35,8 @@ const mapChainToBlockchairChain = (chain: Chain) => {
       return "dash";
     case Chain.Dogecoin:
       return "dogecoin";
+    case Chain.Zcash:
+      return "zcash";
     default:
       return "bitcoin";
   }
