@@ -17,6 +17,7 @@ import {
   getXDEFIAddress,
   getXDEFIProvider,
   getXdefiMethods,
+  solanaTransfer,
   walletTransfer,
 } from "./walletHelpers";
 
@@ -49,7 +50,14 @@ async function getWalletMethodsForChain({
     case Chain.Solana: {
       const { SOLToolbox } = await import("@swapkit/toolbox-solana");
 
-      return { ...SOLToolbox(), transfer: walletTransfer };
+      const toolbox = SOLToolbox();
+      const pubKey = await window.xfi?.solana?.connect();
+
+      if (!pubKey) {
+        throw new SwapKitError("wallet_xdefi_not_found");
+      }
+
+      return { ...toolbox, transfer: solanaTransfer(toolbox, pubKey.publicKey) };
     }
 
     case Chain.Maya:
@@ -85,7 +93,7 @@ async function getWalletMethodsForChain({
         recipient: string;
         assetValue: AssetValue;
         memo: string;
-      }) => toolbox.transfer({ signer: offlineSigner, fee: 2, ...params });
+      }) => toolbox.transfer({ signer: offlineSigner, ...params });
 
       return {
         ...toolbox,

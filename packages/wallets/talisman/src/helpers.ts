@@ -10,15 +10,14 @@ import {
   ensureEVMApiKeys,
   prepareNetworkSwitch,
 } from "@swapkit/helpers";
-import {
-  type ARBToolbox,
-  type BSCToolbox,
-  BrowserProvider,
-  type Eip1193Provider,
-  type MATICToolbox,
-  type OPToolbox,
+import type {
+  ARBToolbox,
+  BASEToolbox,
+  BSCToolbox,
+  Eip1193Provider,
+  MATICToolbox,
+  OPToolbox,
 } from "@swapkit/toolbox-evm";
-
 import type { InjectedWindow } from "@swapkit/toolbox-substrate";
 
 declare const window: {
@@ -43,7 +42,7 @@ export const getWeb3WalletMethods = async ({
   covalentApiKey?: string;
   ethplorerApiKey?: string;
 }) => {
-  const { getToolboxByChain } = await import("@swapkit/toolbox-evm");
+  const { BrowserProvider, getToolboxByChain } = await import("@swapkit/toolbox-evm");
 
   if (!ethereumWindowProvider) {
     throw new SwapKitError({
@@ -65,6 +64,7 @@ export const getWeb3WalletMethods = async ({
         (
           toolbox as
             | ReturnType<typeof ARBToolbox>
+            | ReturnType<typeof BASEToolbox>
             | ReturnType<typeof BSCToolbox>
             | ReturnType<typeof MATICToolbox>
             | ReturnType<typeof OPToolbox>
@@ -99,7 +99,8 @@ export const getWalletForChain = async ({
     case Chain.Optimism:
     case Chain.Polygon:
     case Chain.Avalanche:
-    case Chain.BinanceSmartChain: {
+    case Chain.BinanceSmartChain:
+    case Chain.Base: {
       if (!(window.talismanEth && "send" in window.talismanEth)) {
         throw new SwapKitError({ errorKey: "wallet_talisman_not_found", info: { chain } });
       }

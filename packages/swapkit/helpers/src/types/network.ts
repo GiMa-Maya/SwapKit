@@ -1,15 +1,16 @@
+/** @deprecated Use getRPCUrl or RPC_URLS instead */
 export enum RPCUrl {
   Arbitrum = "https://arb1.arbitrum.io/rpc",
-  Avalanche = "https://node-router.thorswap.net/avalanche-c",
+  Avalanche = "https://avalanche-c-chain-rpc.publicnode.com",
   Base = "https://base.llamarpc.com",
   BinanceSmartChain = "https://bsc-dataseed.binance.org",
-  Bitcoin = "https://node-router.thorswap.net/bitcoin",
+  Bitcoin = "https://bitcoin-rpc.publicnode.com",
   BitcoinCash = "https://node-router.thorswap.net/bitcoin-cash",
   Chainflip = "wss://mainnet-archive.chainflip.io",
   Cosmos = "https://node-router.thorswap.net/cosmos/rpc",
-  Dash = "https://node-router.thorswap.net/dash",
+  Dash = "https://dash-rpc.publicnode.com",
   Dogecoin = "https://node-router.thorswap.net/dogecoin",
-  Ethereum = "https://node-router.thorswap.net/ethereum",
+  Ethereum = "https://ethereum-rpc.publicnode.com",
   Kujira = "https://rpc-kujira.synergynodes.com/",
   Litecoin = "https://node-router.thorswap.net/litecoin",
   Maya = "https://tendermint.mayachain.info",
@@ -23,6 +24,7 @@ export enum RPCUrl {
   Solana = "https://solana-rpc.publicnode.com",
 }
 
+/** @deprecated Use EXPLORER_URLS instead */
 export enum ExplorerUrl {
   Arbitrum = "https://arbiscan.io",
   Avalanche = "https://snowtrace.io",

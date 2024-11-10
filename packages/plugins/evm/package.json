@@ -14,7 +14,6 @@
   "license": "Apache-2.0",
   "main": "./dist/index.js",
   "name": "@swapkit/plugin-evm",
-  "react-native": "./src/index.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thorswap/SwapKit.git"
@@ -29,5 +28,5 @@
   },
   "type": "module",
   "types": "./src/index.ts",
-  "version": "1.1.24"
+  "version": "1.1.35"
 }

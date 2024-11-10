@@ -18,7 +18,6 @@
   "license": "Apache-2.0",
   "main": "./dist/index.js",
   "name": "@swapkit/toolbox-evm",
-  "react-native": "./src/index.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thorswap/SwapKit.git"
@@ -33,5 +32,5 @@
   },
   "type": "module",
   "types": "./src/index.ts",
-  "version": "1.5.3"
+  "version": "1.7.1"
 }

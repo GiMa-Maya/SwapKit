@@ -5,6 +5,7 @@
     "@swapkit/wallet-evm-extensions": "workspace:*",
     "@swapkit/wallet-exodus": "workspace:*",
     "@swapkit/wallet-keepkey": "workspace:*",
+    "@swapkit/wallet-keepkey-bex": "workspace:*",
     "@swapkit/wallet-keplr": "workspace:*",
     "@swapkit/wallet-keystore": "workspace:*",
     "@swapkit/wallet-ledger": "workspace:*",
@@ -25,7 +26,6 @@
   "license": "Apache-2.0",
   "main": "./dist/index.js",
   "name": "@swapkit/wallets",
-  "react-native": "./src/index.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thorswap/SwapKit.git"
@@ -40,5 +40,5 @@
   },
   "type": "module",
   "types": "./src/index.ts",
-  "version": "1.2.15"
+  "version": "1.2.32"
 }

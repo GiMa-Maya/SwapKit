@@ -1,5 +1,95 @@
 # @swapkit/wallet-keplr
 
+## 1.1.11
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @swapkit/helpers@1.15.1
+  - @swapkit/toolbox-cosmos@1.5.1
+
+## 1.1.10
+
+### Patch Changes
+
+- Updated dependencies [[`1181ddc`](https://github.com/thorswap/SwapKit/commit/1181ddcbbc23b62225ec7f6c78cbf4797b80b178)]:
+  - @swapkit/toolbox-cosmos@1.5.0
+  - @swapkit/helpers@1.15.0
+
+## 1.1.9
+
+### Patch Changes
+
+- Updated dependencies [[`c59a204`](https://github.com/thorswap/SwapKit/commit/c59a2041006965026bb5c3fd52e59eb9fb204182)]:
+  - @swapkit/helpers@1.14.2
+  - @swapkit/toolbox-cosmos@1.4.3
+
+## 1.1.8
+
+### Patch Changes
+
+- Updated dependencies [[`e0690ea`](https://github.com/thorswap/SwapKit/commit/e0690ea10fb0691f28783b16b624b7f7361e8916)]:
+  - @swapkit/helpers@1.14.1
+  - @swapkit/toolbox-cosmos@1.4.2
+
+## 1.1.7
+
+### Patch Changes
+
+- Updated dependencies [[`e82da08`](https://github.com/thorswap/SwapKit/commit/e82da089e50a3fdca3c007e9620d5e561553a61a)]:
+  - @swapkit/helpers@1.14.0
+  - @swapkit/toolbox-cosmos@1.4.1
+
+## 1.1.6
+
+### Patch Changes
+
+- Updated dependencies [[`e8735e1`](https://github.com/thorswap/SwapKit/commit/e8735e19971d9e8e636cba8f92cf8c12d436d777)]:
+  - @swapkit/toolbox-cosmos@1.4.0
+  - @swapkit/helpers@1.13.3
+
+## 1.1.5
+
+### Patch Changes
+
+- Updated dependencies [[`9893763`](https://github.com/thorswap/SwapKit/commit/9893763661f89557742fc10edacb894b1ac489d2)]:
+  - @swapkit/helpers@1.13.3
+  - @swapkit/toolbox-cosmos@1.3.17
+
+## 1.1.4
+
+### Patch Changes
+
+- [`7fc6ec5`](https://github.com/thorswap/SwapKit/commit/7fc6ec582f74cd8f0bba0b1a69bbc990ca79f955) Thanks [@towanTG](https://github.com/towanTG)! - Bump all packages
+
+- Updated dependencies [[`7fc6ec5`](https://github.com/thorswap/SwapKit/commit/7fc6ec582f74cd8f0bba0b1a69bbc990ca79f955), [`dc36c35`](https://github.com/thorswap/SwapKit/commit/dc36c35204d9b96e7c2651733d4418c32aad91af)]:
+  - @swapkit/helpers@1.13.2
+  - @swapkit/toolbox-cosmos@1.3.16
+
+## 1.1.3
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @swapkit/helpers@1.13.1
+  - @swapkit/toolbox-cosmos@1.3.15
+
+## 1.1.2
+
+### Patch Changes
+
+- Updated dependencies [[`66147be`](https://github.com/thorswap/SwapKit/commit/66147be7f795caa52f2c1fec5fbf1568afcae3c4)]:
+  - @swapkit/helpers@1.13.0
+  - @swapkit/toolbox-cosmos@1.3.14
+
+## 1.1.1
+
+### Patch Changes
+
+- Updated dependencies [[`ce2e5f9`](https://github.com/thorswap/SwapKit/commit/ce2e5f997ec06d8f6553559ffc6781935f59cd41)]:
+  - @swapkit/helpers@1.12.1
+  - @swapkit/toolbox-cosmos@1.3.13
+
 ## 1.1.0
 
 ### Minor Changes

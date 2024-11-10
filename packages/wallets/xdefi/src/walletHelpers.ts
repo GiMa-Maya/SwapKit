@@ -7,12 +7,12 @@ import {
   type EVMChain,
   EVMChains,
   type FeeOption,
-  RPCUrl,
   SwapKitError,
   WalletOption,
   erc20ABI,
+  getRPCUrl,
 } from "@swapkit/helpers";
-import { type TransferParams, getDenom } from "@swapkit/toolbox-cosmos";
+import type { TransferParams } from "@swapkit/toolbox-cosmos";
 import type {
   ApproveParams,
   BrowserProvider,
@@ -20,7 +20,7 @@ import type {
   EVMTxParams,
   Eip1193Provider,
 } from "@swapkit/toolbox-evm";
-import type { SolanaProvider } from "@swapkit/toolbox-solana";
+import type { PublicKey, SOLToolbox, SolanaProvider } from "@swapkit/toolbox-solana";
 
 type TransactionMethod = "transfer" | "deposit";
 
@@ -212,19 +212,21 @@ export function cosmosTransfer({
   rpcUrl?: string;
 }) {
   return async ({ from, recipient, assetValue, memo }: TransferParams) => {
-    const { createSigningStargateClient } = await import("@swapkit/toolbox-cosmos");
+    const { getMsgSendDenom, createSigningStargateClient } = await import(
+      "@swapkit/toolbox-cosmos"
+    );
     await window.xfi?.keplr?.enable(chainId);
     // @ts-ignore
     const offlineSigner = window.xfi?.keplr?.getOfflineSignerOnlyAmino(chainId);
     const cosmJS = await createSigningStargateClient(
-      rpcUrl || RPCUrl.Cosmos,
+      rpcUrl || getRPCUrl(Chain.Cosmos),
       offlineSigner,
       chainId === ChainId.Kujira ? "0.0003ukuji" : undefined,
     );
 
     const coins = [
       {
-        denom: getDenom(assetValue.symbol).toLowerCase(),
+        denom: getMsgSendDenom(assetValue.symbol).toLowerCase(),
         amount: assetValue.getBaseValue("string"),
       },
     ];
@@ -235,6 +237,34 @@ export function cosmosTransfer({
     } catch (error) {
       throw new SwapKitError("core_transaction_failed", { error });
     }
+  };
+}
+
+export function solanaTransfer(
+  solToolbox: ReturnType<typeof SOLToolbox>,
+  walletPublicKey: PublicKey,
+) {
+  return async ({
+    recipient,
+    assetValue,
+    memo,
+    isProgramDerivedAddress,
+  }: TransferParams & { isProgramDerivedAddress?: boolean }) => {
+    const transaction = await solToolbox.createSolanaTransaction({
+      recipient,
+      assetValue,
+      memo,
+      fromPublicKey: walletPublicKey,
+      isProgramDerivedAddress,
+    });
+
+    const signedTransaction = await window.xfi?.solana.signTransaction(transaction);
+
+    if (!signedTransaction) {
+      throw new SwapKitError("core_transaction_failed");
+    }
+
+    return solToolbox.broadcastTransaction(signedTransaction);
   };
 }
 

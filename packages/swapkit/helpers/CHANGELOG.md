@@ -1,5 +1,73 @@
 # @swapkit/helpers
 
+## 1.15.1
+
+### Patch Changes
+
+- Updated dependencies [[`cf6df7e`](https://github.com/thorswap/SwapKit/commit/cf6df7e889fd94c33fac69d138c964ce741469cd)]:
+  - @swapkit/tokens@1.8.4
+
+## 1.15.0
+
+### Minor Changes
+
+- [#1081](https://github.com/thorswap/SwapKit/pull/1081) [`1181ddc`](https://github.com/thorswap/SwapKit/commit/1181ddcbbc23b62225ec7f6c78cbf4797b80b178) Thanks [@towanTG](https://github.com/towanTG)! - Adds node rpc fallback logic.
+
+## 1.14.2
+
+### Patch Changes
+
+- [#1079](https://github.com/thorswap/SwapKit/pull/1079) [`c59a204`](https://github.com/thorswap/SwapKit/commit/c59a2041006965026bb5c3fd52e59eb9fb204182) Thanks [@towanTG](https://github.com/towanTG)! - Changes some RPCUrl to third party
+
+## 1.14.1
+
+### Patch Changes
+
+- [#1077](https://github.com/thorswap/SwapKit/pull/1077) [`e0690ea`](https://github.com/thorswap/SwapKit/commit/e0690ea10fb0691f28783b16b624b7f7361e8916) Thanks [@towanTG](https://github.com/towanTG)! - Uses public evm nodes
+
+## 1.14.0
+
+### Minor Changes
+
+- [#1070](https://github.com/thorswap/SwapKit/pull/1070) [`e82da08`](https://github.com/thorswap/SwapKit/commit/e82da089e50a3fdca3c007e9620d5e561553a61a) Thanks [@towanTG](https://github.com/towanTG)! - Adds decimal parameter to getValue and getBaseValue to let users adjust the decimals returned for a SwapKitNumber
+
+## 1.13.3
+
+### Patch Changes
+
+- [#1048](https://github.com/thorswap/SwapKit/pull/1048) [`9893763`](https://github.com/thorswap/SwapKit/commit/9893763661f89557742fc10edacb894b1ac489d2) Thanks [@towanTG](https://github.com/towanTG)! - Fixes Keystore Solana derivation path to use account index (4th) instead of address index (5th)
+
+## 1.13.2
+
+### Patch Changes
+
+- [`7fc6ec5`](https://github.com/thorswap/SwapKit/commit/7fc6ec582f74cd8f0bba0b1a69bbc990ca79f955) Thanks [@towanTG](https://github.com/towanTG)! - Bump all packages
+
+- [`dc36c35`](https://github.com/thorswap/SwapKit/commit/dc36c35204d9b96e7c2651733d4418c32aad91af) Thanks [@ice-chillios](https://github.com/ice-chillios)! - bump for new wallet
+
+- Updated dependencies [[`7fc6ec5`](https://github.com/thorswap/SwapKit/commit/7fc6ec582f74cd8f0bba0b1a69bbc990ca79f955)]:
+  - @swapkit/contracts@1.0.6
+  - @swapkit/tokens@1.8.3
+
+## 1.13.1
+
+### Patch Changes
+
+- Updated dependencies [[`a67cc8e`](https://github.com/thorswap/SwapKit/commit/a67cc8ede4f8366b6dab02e026143be1d6bae3e2)]:
+  - @swapkit/tokens@1.8.2
+
+## 1.13.0
+
+### Minor Changes
+
+- [#1030](https://github.com/thorswap/SwapKit/pull/1030) [`66147be`](https://github.com/thorswap/SwapKit/commit/66147be7f795caa52f2c1fec5fbf1568afcae3c4) Thanks [@towanTG](https://github.com/towanTG)! - Adds THORChain trade asset support
+
+## 1.12.1
+
+### Patch Changes
+
+- [#1026](https://github.com/thorswap/SwapKit/pull/1026) [`ce2e5f9`](https://github.com/thorswap/SwapKit/commit/ce2e5f997ec06d8f6553559ffc6781935f59cd41) Thanks [@towanTG](https://github.com/towanTG)! - Keeps Sol address case sensitive
+
 ## 1.12.0
 
 ### Minor Changes

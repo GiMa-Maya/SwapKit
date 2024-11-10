@@ -1,5 +1,23 @@
 # @swapkit/tokens
 
+## 1.8.4
+
+### Patch Changes
+
+- [#1082](https://github.com/thorswap/SwapKit/pull/1082) [`cf6df7e`](https://github.com/thorswap/SwapKit/commit/cf6df7e889fd94c33fac69d138c964ce741469cd) Thanks [@github-actions](https://github.com/apps/github-actions)! - Updates token lists
+
+## 1.8.3
+
+### Patch Changes
+
+- [`7fc6ec5`](https://github.com/thorswap/SwapKit/commit/7fc6ec582f74cd8f0bba0b1a69bbc990ca79f955) Thanks [@towanTG](https://github.com/towanTG)! - Bump all packages
+
+## 1.8.2
+
+### Patch Changes
+
+- [`a67cc8e`](https://github.com/thorswap/SwapKit/commit/a67cc8ede4f8366b6dab02e026143be1d6bae3e2) Thanks [@ice-chillios](https://github.com/ice-chillios)! - Fix chainflip asset amount on getting deposit address
+
 ## 1.8.1
 
 ### Patch Changes

@@ -1,5 +1,144 @@
 # @swapkit/plugin-chainflip
 
+## 1.3.24
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @swapkit/helpers@1.15.1
+  - @swapkit/api@1.10.1
+  - @swapkit/toolbox-evm@1.7.1
+  - @swapkit/toolbox-substrate@1.3.1
+  - @swapkit/toolbox-utxo@1.2.1
+
+## 1.3.23
+
+### Patch Changes
+
+- Updated dependencies [[`1181ddc`](https://github.com/thorswap/SwapKit/commit/1181ddcbbc23b62225ec7f6c78cbf4797b80b178)]:
+  - @swapkit/toolbox-substrate@1.3.0
+  - @swapkit/helpers@1.15.0
+  - @swapkit/toolbox-utxo@1.2.0
+  - @swapkit/toolbox-evm@1.7.0
+  - @swapkit/api@1.10.0
+
+## 1.3.22
+
+### Patch Changes
+
+- Updated dependencies [[`c59a204`](https://github.com/thorswap/SwapKit/commit/c59a2041006965026bb5c3fd52e59eb9fb204182)]:
+  - @swapkit/helpers@1.14.2
+  - @swapkit/api@1.9.9
+  - @swapkit/toolbox-evm@1.6.3
+  - @swapkit/toolbox-substrate@1.2.23
+  - @swapkit/toolbox-utxo@1.1.28
+
+## 1.3.21
+
+### Patch Changes
+
+- Updated dependencies [[`e0690ea`](https://github.com/thorswap/SwapKit/commit/e0690ea10fb0691f28783b16b624b7f7361e8916)]:
+  - @swapkit/helpers@1.14.1
+  - @swapkit/api@1.9.8
+  - @swapkit/toolbox-evm@1.6.2
+  - @swapkit/toolbox-substrate@1.2.22
+  - @swapkit/toolbox-utxo@1.1.27
+
+## 1.3.20
+
+### Patch Changes
+
+- [#1069](https://github.com/thorswap/SwapKit/pull/1069) [`ab3175e`](https://github.com/thorswap/SwapKit/commit/ab3175ec7bef4b907f28dfd6f358ea692497e525) Thanks [@towanTG](https://github.com/towanTG)! - Adds program derived address validation to SOL toolbox transfer
+
+- Updated dependencies [[`e82da08`](https://github.com/thorswap/SwapKit/commit/e82da089e50a3fdca3c007e9620d5e561553a61a)]:
+  - @swapkit/helpers@1.14.0
+  - @swapkit/api@1.9.7
+  - @swapkit/toolbox-evm@1.6.1
+  - @swapkit/toolbox-substrate@1.2.21
+  - @swapkit/toolbox-utxo@1.1.26
+
+## 1.3.19
+
+### Patch Changes
+
+- [#1063](https://github.com/thorswap/SwapKit/pull/1063) [`ef4463b`](https://github.com/thorswap/SwapKit/commit/ef4463be78674194568af5a9107985eed33f6db6) Thanks [@towanTG](https://github.com/towanTG)! - Fixes asset ticker to chainflip asset string matching
+
+- Updated dependencies [[`7d4a9f5`](https://github.com/thorswap/SwapKit/commit/7d4a9f501e472254cdf9ddf7aec5460381e6c4c8)]:
+  - @swapkit/toolbox-evm@1.6.0
+  - @swapkit/helpers@1.13.3
+
+## 1.3.18
+
+### Patch Changes
+
+- [#1043](https://github.com/thorswap/SwapKit/pull/1043) [`e8735e1`](https://github.com/thorswap/SwapKit/commit/e8735e19971d9e8e636cba8f92cf8c12d436d777) Thanks [@alexisshleverx](https://github.com/alexisshleverx)! - Add tx building for Gaia and Kuji. Split Thorchain buildTransaction function
+
+- Updated dependencies []:
+  - @swapkit/helpers@1.13.3
+
+## 1.3.17
+
+### Patch Changes
+
+- Updated dependencies [[`19d168a`](https://github.com/thorswap/SwapKit/commit/19d168ab7ea97ab77fb67da2e6a45865bb0f9e9e), [`9893763`](https://github.com/thorswap/SwapKit/commit/9893763661f89557742fc10edacb894b1ac489d2)]:
+  - @swapkit/toolbox-evm@1.5.8
+  - @swapkit/helpers@1.13.3
+  - @swapkit/api@1.9.6
+  - @swapkit/toolbox-substrate@1.2.20
+  - @swapkit/toolbox-utxo@1.1.25
+
+## 1.3.16
+
+### Patch Changes
+
+- [`7fc6ec5`](https://github.com/thorswap/SwapKit/commit/7fc6ec582f74cd8f0bba0b1a69bbc990ca79f955) Thanks [@towanTG](https://github.com/towanTG)! - Bump all packages
+
+- [`f48cf41`](https://github.com/thorswap/SwapKit/commit/f48cf41b41b1b54f9207c7a74f05d571c44d0334) Thanks [@towanTG](https://github.com/towanTG)! - Bumps version to release new SDK with missing fixes
+
+- Updated dependencies [[`7fc6ec5`](https://github.com/thorswap/SwapKit/commit/7fc6ec582f74cd8f0bba0b1a69bbc990ca79f955), [`dc36c35`](https://github.com/thorswap/SwapKit/commit/dc36c35204d9b96e7c2651733d4418c32aad91af)]:
+  - @swapkit/api@1.9.5
+  - @swapkit/helpers@1.13.2
+  - @swapkit/toolbox-evm@1.5.7
+  - @swapkit/toolbox-substrate@1.2.19
+  - @swapkit/toolbox-utxo@1.1.24
+
+## 1.3.15
+
+### Patch Changes
+
+- [`a67cc8e`](https://github.com/thorswap/SwapKit/commit/a67cc8ede4f8366b6dab02e026143be1d6bae3e2) Thanks [@ice-chillios](https://github.com/ice-chillios)! - Fix chainflip asset amount on getting deposit address
+
+- Updated dependencies []:
+  - @swapkit/helpers@1.13.1
+  - @swapkit/api@1.9.4
+  - @swapkit/toolbox-evm@1.5.6
+  - @swapkit/toolbox-substrate@1.2.18
+  - @swapkit/toolbox-utxo@1.1.23
+
+## 1.3.14
+
+### Patch Changes
+
+- Updated dependencies [[`66147be`](https://github.com/thorswap/SwapKit/commit/66147be7f795caa52f2c1fec5fbf1568afcae3c4)]:
+  - @swapkit/helpers@1.13.0
+  - @swapkit/api@1.9.3
+  - @swapkit/toolbox-evm@1.5.5
+  - @swapkit/toolbox-substrate@1.2.17
+  - @swapkit/toolbox-utxo@1.1.22
+
+## 1.3.13
+
+### Patch Changes
+
+- [#1024](https://github.com/thorswap/SwapKit/pull/1024) [`031a8c6`](https://github.com/thorswap/SwapKit/commit/031a8c6d4b1ad43465a20bc76246aa0e31b81db0) Thanks [@0xepicode](https://github.com/0xepicode)! - Fixed funding chainglip account
+
+- Updated dependencies [[`ce2e5f9`](https://github.com/thorswap/SwapKit/commit/ce2e5f997ec06d8f6553559ffc6781935f59cd41), [`031a8c6`](https://github.com/thorswap/SwapKit/commit/031a8c6d4b1ad43465a20bc76246aa0e31b81db0)]:
+  - @swapkit/helpers@1.12.1
+  - @swapkit/toolbox-evm@1.5.4
+  - @swapkit/api@1.9.2
+  - @swapkit/toolbox-substrate@1.2.16
+  - @swapkit/toolbox-utxo@1.1.21
+
 ## 1.3.12
 
 ### Patch Changes

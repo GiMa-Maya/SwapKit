@@ -20,16 +20,9 @@ import {
   type SwapParams,
   type WalletChain,
 } from "@swapkit/helpers";
-import {
-  type TransferParams as CosmosTransferParams,
-  estimateTransactionFee as cosmosTransactionFee,
-  cosmosValidateAddress,
-} from "@swapkit/toolbox-cosmos";
-import { type TransferParams as EVMTransferParams, evmValidateAddress } from "@swapkit/toolbox-evm";
-import { validateAddress as validateRadixAddress } from "@swapkit/toolbox-radix";
-import { validateAddress as solanaValidateAddress } from "@swapkit/toolbox-solana";
-import { substrateValidateAddress } from "@swapkit/toolbox-substrate";
-import { type UTXOTransferParams, utxoValidateAddress } from "@swapkit/toolbox-utxo";
+import type { TransferParams as CosmosTransferParams } from "@swapkit/toolbox-cosmos";
+import type { TransferParams as EVMTransferParams } from "@swapkit/toolbox-evm";
+import type { UTXOTransferParams } from "@swapkit/toolbox-utxo";
 
 import {
   getExplorerAddressUrl as getAddressUrl,
@@ -213,41 +206,14 @@ export function SwapKit<
     ) as ConditionalAssetValueReturn<R>;
   }
 
-  function validateAddress({ address, chain }: { address: string; chain: Chain }) {
-    switch (chain) {
-      case Chain.Arbitrum:
-      case Chain.Avalanche:
-      case Chain.Optimism:
-      case Chain.BinanceSmartChain:
-      case Chain.Polygon:
-      case Chain.Ethereum:
-        return evmValidateAddress({ address });
-
-      case Chain.Litecoin:
-      case Chain.Dash:
-      case Chain.Dogecoin:
-      case Chain.BitcoinCash:
-      case Chain.Bitcoin:
-        return utxoValidateAddress({ address, chain });
-
-      case Chain.Cosmos:
-      case Chain.Kujira:
-      case Chain.Maya:
-      case Chain.THORChain:
-        return cosmosValidateAddress({ address, chain });
-
-      case Chain.Polkadot:
-        return substrateValidateAddress({ address, chain });
-
-      case Chain.Radix:
-        return validateRadixAddress(address);
-
-      case Chain.Solana:
-        return solanaValidateAddress(address);
-
-      default:
-        return false;
-    }
+  /**
+   * @deprecated - use toolbox directly or use getAddressValidator() function
+   */
+  function validateAddress(_: { address: string; chain: Chain }) {
+    throw new SwapKitError("not_implemented", {
+      message:
+        "validateAddress is deprecated - use toolbox directly or import { getAddressValidator } from '@swapkit/core'",
+    });
   }
 
   async function getWalletWithBalance<T extends Chain>(chain: T, potentialScamFilter = true) {
@@ -418,7 +384,8 @@ export function SwapKit<
       case Chain.Maya:
       case Chain.Kujira:
       case Chain.Cosmos: {
-        return cosmosTransactionFee(params);
+        const { estimateTransactionFee } = await import("@swapkit/toolbox-cosmos");
+        return estimateTransactionFee(params);
       }
 
       case Chain.Polkadot: {

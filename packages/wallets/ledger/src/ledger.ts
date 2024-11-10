@@ -4,9 +4,10 @@ import {
   type ConnectWalletParams,
   type DerivationPathArray,
   FeeOption,
-  RPCUrl,
+  StagenetChain,
   WalletOption,
   ensureEVMApiKeys,
+  getRPCUrl,
   setRequestClientConfig,
 } from "@swapkit/helpers";
 import type { DepositParam, TransferParams } from "@swapkit/toolbox-cosmos";
@@ -107,7 +108,8 @@ const getToolbox = async ({
     case Chain.Arbitrum:
     case Chain.Optimism:
     case Chain.Polygon:
-    case Chain.BinanceSmartChain: {
+    case Chain.BinanceSmartChain:
+    case Chain.Base: {
       const keys = ensureEVMApiKeys({ chain, covalentApiKey, ethplorerApiKey });
       const { getToolboxByChain, getProvider } = await import("@swapkit/toolbox-evm");
       const signer = await getLedgerClient({ chain, derivationPath });
@@ -119,7 +121,7 @@ const getToolbox = async ({
     }
 
     case Chain.Cosmos: {
-      const { createSigningStargateClient, getDenom, GaiaToolbox } = await import(
+      const { createSigningStargateClient, getMsgSendDenom, GaiaToolbox } = await import(
         "@swapkit/toolbox-cosmos"
       );
       const toolbox = GaiaToolbox();
@@ -133,7 +135,7 @@ const getToolbox = async ({
           amount: [
             {
               amount: assetValue.getBaseValue("string"),
-              denom: getDenom(`u${assetValue.symbol}`).toLowerCase(),
+              denom: getMsgSendDenom(`u${assetValue.symbol}`).toLowerCase(),
             },
           ],
           fromAddress: address,
@@ -141,7 +143,7 @@ const getToolbox = async ({
         };
 
         const signingClient = await createSigningStargateClient(
-          RPCUrl.Cosmos,
+          getRPCUrl(Chain.Cosmos),
           signer,
           "0.007uatom",
         );
@@ -191,7 +193,7 @@ const getToolbox = async ({
         if (!assetValue) throw new Error("invalid asset");
 
         if (!value) throw new Error("Account pubkey not found");
-        const rpcUrl = stagenet ? RPCUrl.THORChainStagenet : RPCUrl.THORChain;
+        const rpcUrl = stagenet ? getRPCUrl(StagenetChain.THORChain) : getRPCUrl(Chain.THORChain);
 
         const { accountNumber, sequence: sequenceNumber } = account;
         const sequence = (sequenceNumber || 0).toString();

@@ -4,16 +4,16 @@ import {
   ChainId,
   ChainToExplorerUrl,
   FeeOption,
-  RPCUrl,
+  getRPCUrl,
 } from "@swapkit/helpers";
 import type { BrowserProvider, JsonRpcProvider, Signer, TransactionRequest } from "ethers";
+import { Contract, Transaction } from "ethers";
 
 import type { CovalentApiType } from "../api/covalentApi";
 import { covalentApi } from "../api/covalentApi";
 import { gasOracleAbi } from "../contracts/op/gasOracle";
 import { getBalance } from "../index";
 
-import { Contract, Transaction } from "ethers";
 import { EVMToolbox } from "./EVMToolbox";
 
 const GAS_PRICE_ORACLE_ADDRESS = "0x420000000000000000000000000000000000000f";
@@ -94,7 +94,7 @@ const getNetworkParams = () => ({
   chainId: ChainId.OptimismHex,
   chainName: "Optimism",
   nativeCurrency: { name: "Ethereum", symbol: Chain.Ethereum, decimals: BaseDecimal.ETH },
-  rpcUrls: [RPCUrl.Optimism],
+  rpcUrls: [getRPCUrl(Chain.Optimism)],
   blockExplorerUrls: [ChainToExplorerUrl[Chain.Optimism]],
 });
 

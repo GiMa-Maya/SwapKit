@@ -2,16 +2,17 @@ import {
   type AssetValue,
   Chain,
   type ConnectWalletParams,
-  DerivationPath,
   type DerivationPathArray,
-  RPCUrl,
+  NetworkDerivationPath,
   type WalletChain,
   WalletOption,
   type WalletTxParams,
   type Witness,
   derivationPathToString,
   ensureEVMApiKeys,
+  getRPCUrl,
   setRequestClientConfig,
+  updatedLastIndex,
 } from "@swapkit/helpers";
 import type { DepositParam, TransferParams } from "@swapkit/toolbox-cosmos";
 import type {
@@ -166,7 +167,8 @@ const getWalletMethodsForChain = async ({
       const signer = await createKeyring(phrase, Network[chain].prefix);
       const toolbox = await getToolboxByChain(chain, {
         signer,
-        providerUrl: chain === Chain.Polkadot ? RPCUrl.Polkadot : RPCUrl.Chainflip,
+        providerUrl:
+          chain === Chain.Polkadot ? getRPCUrl(Chain.Polkadot) : getRPCUrl(Chain.Chainflip),
       });
 
       return { address: signer.address, walletMethods: toolbox };
@@ -206,15 +208,26 @@ function connectKeystore({
     setRequestClientConfig({ apiKey: thorswapApiKey });
 
     const promises = chains.map(async (chain) => {
-      const index = typeof derivationPathMapOrIndex === "number" ? derivationPathMapOrIndex : 0;
-      const derivationPathArray =
+      const derivationPathIndex =
+        typeof derivationPathMapOrIndex === "number" ? derivationPathMapOrIndex : 0;
+
+      const derivationPathFromMap =
         derivationPathMapOrIndex && typeof derivationPathMapOrIndex === "object"
           ? derivationPathMapOrIndex[chain]
           : undefined;
 
-      const derivationPath = derivationPathArray
-        ? derivationPathToString(derivationPathArray)
-        : `${DerivationPath[chain]}/${index}`;
+      const [first, second, third, fourth, fifth] = NetworkDerivationPath[chain];
+
+      const derivationPathArray: DerivationPathArray =
+        derivationPathFromMap ||
+        updatedLastIndex(
+          chain === Chain.Solana
+            ? [first, second, third, fourth]
+            : [first, second, third, fourth, fifth],
+          derivationPathIndex,
+        );
+
+      const derivationPath = derivationPathToString(derivationPathArray);
 
       const { address, walletMethods } = await getWalletMethodsForChain({
         derivationPath,

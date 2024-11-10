@@ -1,5 +1,116 @@
 # @swapkit/toolbox-solana
 
+## 1.3.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @swapkit/helpers@1.15.1
+
+## 1.3.0
+
+### Minor Changes
+
+- [#1081](https://github.com/thorswap/SwapKit/pull/1081) [`1181ddc`](https://github.com/thorswap/SwapKit/commit/1181ddcbbc23b62225ec7f6c78cbf4797b80b178) Thanks [@towanTG](https://github.com/towanTG)! - Adds node rpc fallback logic.
+
+### Patch Changes
+
+- [#1084](https://github.com/thorswap/SwapKit/pull/1084) [`d90ec0b`](https://github.com/thorswap/SwapKit/commit/d90ec0b9d50921109e4214f7c85595b2c9a97c6d) Thanks [@alexisshleverx](https://github.com/alexisshleverx)! - Bump @solana/web3.js version
+
+- Updated dependencies [[`1181ddc`](https://github.com/thorswap/SwapKit/commit/1181ddcbbc23b62225ec7f6c78cbf4797b80b178)]:
+  - @swapkit/helpers@1.15.0
+
+## 1.2.3
+
+### Patch Changes
+
+- Updated dependencies [[`c59a204`](https://github.com/thorswap/SwapKit/commit/c59a2041006965026bb5c3fd52e59eb9fb204182)]:
+  - @swapkit/helpers@1.14.2
+
+## 1.2.2
+
+### Patch Changes
+
+- Updated dependencies [[`e0690ea`](https://github.com/thorswap/SwapKit/commit/e0690ea10fb0691f28783b16b624b7f7361e8916)]:
+  - @swapkit/helpers@1.14.1
+
+## 1.2.1
+
+### Patch Changes
+
+- [#1075](https://github.com/thorswap/SwapKit/pull/1075) [`003b4df`](https://github.com/thorswap/SwapKit/commit/003b4df48afc1abf7694f2fb5310a08e91b954ad) Thanks [@towanTG](https://github.com/towanTG)! - Adds and updates solana HDKey package dependency
+
+- Updated dependencies []:
+  - @swapkit/helpers@1.14.0
+
+## 1.2.0
+
+### Minor Changes
+
+- [#1071](https://github.com/thorswap/SwapKit/pull/1071) [`931028a`](https://github.com/thorswap/SwapKit/commit/931028ab14c54cf85655ce02e947a9bf57b67d2e) Thanks [@towanTG](https://github.com/towanTG)! - Adds Solana transfer memo and fixes xdefi integration
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @swapkit/helpers@1.14.0
+
+## 1.1.17
+
+### Patch Changes
+
+- [#1069](https://github.com/thorswap/SwapKit/pull/1069) [`ab3175e`](https://github.com/thorswap/SwapKit/commit/ab3175ec7bef4b907f28dfd6f358ea692497e525) Thanks [@towanTG](https://github.com/towanTG)! - Adds program derived address validation to SOL toolbox transfer
+
+- [`c3362d6`](https://github.com/thorswap/SwapKit/commit/c3362d6617cf2597137ffa541ec19128b4af47d1) Thanks [@github-actions[bot]](https://github.com/github-actions%5Bbot%5D)! - Fixes token addresses in getBalance. This is fixing the sending of token issue
+
+- Updated dependencies [[`e82da08`](https://github.com/thorswap/SwapKit/commit/e82da089e50a3fdca3c007e9620d5e561553a61a)]:
+  - @swapkit/helpers@1.14.0
+
+## 1.1.16
+
+### Patch Changes
+
+- Updated dependencies [[`9893763`](https://github.com/thorswap/SwapKit/commit/9893763661f89557742fc10edacb894b1ac489d2)]:
+  - @swapkit/helpers@1.13.3
+
+## 1.1.15
+
+### Patch Changes
+
+- [`7fc6ec5`](https://github.com/thorswap/SwapKit/commit/7fc6ec582f74cd8f0bba0b1a69bbc990ca79f955) Thanks [@towanTG](https://github.com/towanTG)! - Bump all packages
+
+- Updated dependencies [[`7fc6ec5`](https://github.com/thorswap/SwapKit/commit/7fc6ec582f74cd8f0bba0b1a69bbc990ca79f955), [`dc36c35`](https://github.com/thorswap/SwapKit/commit/dc36c35204d9b96e7c2651733d4418c32aad91af)]:
+  - @swapkit/helpers@1.13.2
+
+## 1.1.14
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @swapkit/helpers@1.13.1
+
+## 1.1.13
+
+### Patch Changes
+
+- [`1281bb8`](https://github.com/thorswap/SwapKit/commit/1281bb8242ba70bb9d7286869ec5e9b8e3f44c9a) Thanks [@towanTG](https://github.com/towanTG)! - Fixes xdefi cosmos fee and solana send amount denomination
+
+- Updated dependencies []:
+  - @swapkit/helpers@1.13.0
+
+## 1.1.12
+
+### Patch Changes
+
+- Updated dependencies [[`66147be`](https://github.com/thorswap/SwapKit/commit/66147be7f795caa52f2c1fec5fbf1568afcae3c4)]:
+  - @swapkit/helpers@1.13.0
+
+## 1.1.11
+
+### Patch Changes
+
+- Updated dependencies [[`ce2e5f9`](https://github.com/thorswap/SwapKit/commit/ce2e5f997ec06d8f6553559ffc6781935f59cd41)]:
+  - @swapkit/helpers@1.12.1
+
 ## 1.1.10
 
 ### Patch Changes

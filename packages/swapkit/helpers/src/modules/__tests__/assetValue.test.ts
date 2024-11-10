@@ -26,6 +26,26 @@ describe("AssetValue", () => {
       expect(ethSynth.toString()).toBe("ETH/ETH");
       expect(ethSynth.mul(21.37).getValue("string")).toBe("26382715809.3");
 
+      const ethTrade = new AssetValue({
+        chain: Chain.THORChain,
+        symbol: "ETH~ETH",
+        decimal: 8,
+        value: 1234567890,
+      });
+
+      expect(ethTrade.toString()).toBe("ETH~ETH");
+      expect(ethTrade.mul(21.37).getValue("string")).toBe("26382715809.3");
+
+      const ethThorTrade = new AssetValue({
+        chain: Chain.THORChain,
+        symbol: "ETH~THOR-0xa5f2211b9b8170f694421f2046281775e8468044",
+        decimal: 8,
+        value: 1234567890,
+      });
+
+      expect(ethThorTrade.toString()).toBe("ETH~THOR-0xa5f2211b9b8170f694421f2046281775e8468044");
+      expect(ethThorTrade.chain).toBe(Chain.THORChain);
+
       const ethThorSynth = new AssetValue({
         chain: Chain.THORChain,
         symbol: "ETH/THOR-0xa5f2211b9b8170f694421f2046281775e8468044",
@@ -180,6 +200,16 @@ describe("AssetValue", () => {
         value: 1234567890,
       });
       expect(ethThorSynth.toUrl()).toBe("THOR.ETH.THOR-0xa5f2211b9b8170f694421f2046281775e8468044");
+
+      const ethThorTrade = new AssetValue({
+        chain: Chain.THORChain,
+        symbol: "ETH~THOR-0xa5f2211b9b8170f694421f2046281775e8468044",
+        decimal: 8,
+        value: 1234567890,
+      });
+      expect(ethThorTrade.toUrl()).toBe(
+        "THOR.ETH..THOR-0xa5f2211b9b8170f694421f2046281775e8468044",
+      );
     });
   });
 
@@ -240,7 +270,7 @@ describe("AssetValue", () => {
   });
 
   describe("from bigint", () => {
-    test("returns asset value with correct decimal", async () => {
+    test.todo("returns asset value with correct decimal", async () => {
       const avaxUSDCAsset = await AssetValue.from({
         asset: `${Chain.Avalanche}.USDC-0xb97ef9ef8734c71904d8002f8b6bc66dd9c48a6e`,
         value: 1234567800n,
@@ -736,6 +766,22 @@ describe("AssetValue", () => {
           symbol: "XRD",
           ticker: "XRD",
           type: "Native",
+        }),
+      );
+    });
+
+    test("keep SOL address casing", () => {
+      const solUsdc = AssetValue.from({
+        asset: "SOL.USDC-EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      });
+      expect(solUsdc).toEqual(
+        expect.objectContaining({
+          address: "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          chain: Chain.Solana,
+          isGasAsset: false,
+          isSynthetic: false,
+          symbol: "USDC-EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          ticker: "USDC",
         }),
       );
     });

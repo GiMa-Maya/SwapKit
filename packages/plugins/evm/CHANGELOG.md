@@ -1,5 +1,105 @@
 # @swapkit/plugin-evm
 
+## 1.1.35
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @swapkit/helpers@1.15.1
+  - @swapkit/api@1.10.1
+  - @swapkit/toolbox-evm@1.7.1
+
+## 1.1.34
+
+### Patch Changes
+
+- Updated dependencies [[`1181ddc`](https://github.com/thorswap/SwapKit/commit/1181ddcbbc23b62225ec7f6c78cbf4797b80b178)]:
+  - @swapkit/helpers@1.15.0
+  - @swapkit/toolbox-evm@1.7.0
+  - @swapkit/api@1.10.0
+
+## 1.1.33
+
+### Patch Changes
+
+- Updated dependencies [[`c59a204`](https://github.com/thorswap/SwapKit/commit/c59a2041006965026bb5c3fd52e59eb9fb204182)]:
+  - @swapkit/helpers@1.14.2
+  - @swapkit/api@1.9.9
+  - @swapkit/toolbox-evm@1.6.3
+
+## 1.1.32
+
+### Patch Changes
+
+- Updated dependencies [[`e0690ea`](https://github.com/thorswap/SwapKit/commit/e0690ea10fb0691f28783b16b624b7f7361e8916)]:
+  - @swapkit/helpers@1.14.1
+  - @swapkit/api@1.9.8
+  - @swapkit/toolbox-evm@1.6.2
+
+## 1.1.31
+
+### Patch Changes
+
+- Updated dependencies [[`e82da08`](https://github.com/thorswap/SwapKit/commit/e82da089e50a3fdca3c007e9620d5e561553a61a)]:
+  - @swapkit/helpers@1.14.0
+  - @swapkit/api@1.9.7
+  - @swapkit/toolbox-evm@1.6.1
+
+## 1.1.30
+
+### Patch Changes
+
+- Updated dependencies [[`7d4a9f5`](https://github.com/thorswap/SwapKit/commit/7d4a9f501e472254cdf9ddf7aec5460381e6c4c8)]:
+  - @swapkit/toolbox-evm@1.6.0
+  - @swapkit/helpers@1.13.3
+
+## 1.1.29
+
+### Patch Changes
+
+- Updated dependencies [[`19d168a`](https://github.com/thorswap/SwapKit/commit/19d168ab7ea97ab77fb67da2e6a45865bb0f9e9e), [`9893763`](https://github.com/thorswap/SwapKit/commit/9893763661f89557742fc10edacb894b1ac489d2)]:
+  - @swapkit/toolbox-evm@1.5.8
+  - @swapkit/helpers@1.13.3
+  - @swapkit/api@1.9.6
+
+## 1.1.28
+
+### Patch Changes
+
+- [`7fc6ec5`](https://github.com/thorswap/SwapKit/commit/7fc6ec582f74cd8f0bba0b1a69bbc990ca79f955) Thanks [@towanTG](https://github.com/towanTG)! - Bump all packages
+
+- Updated dependencies [[`7fc6ec5`](https://github.com/thorswap/SwapKit/commit/7fc6ec582f74cd8f0bba0b1a69bbc990ca79f955), [`dc36c35`](https://github.com/thorswap/SwapKit/commit/dc36c35204d9b96e7c2651733d4418c32aad91af)]:
+  - @swapkit/api@1.9.5
+  - @swapkit/helpers@1.13.2
+  - @swapkit/toolbox-evm@1.5.7
+
+## 1.1.27
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @swapkit/helpers@1.13.1
+  - @swapkit/api@1.9.4
+  - @swapkit/toolbox-evm@1.5.6
+
+## 1.1.26
+
+### Patch Changes
+
+- Updated dependencies [[`66147be`](https://github.com/thorswap/SwapKit/commit/66147be7f795caa52f2c1fec5fbf1568afcae3c4)]:
+  - @swapkit/helpers@1.13.0
+  - @swapkit/api@1.9.3
+  - @swapkit/toolbox-evm@1.5.5
+
+## 1.1.25
+
+### Patch Changes
+
+- Updated dependencies [[`ce2e5f9`](https://github.com/thorswap/SwapKit/commit/ce2e5f997ec06d8f6553559ffc6781935f59cd41), [`031a8c6`](https://github.com/thorswap/SwapKit/commit/031a8c6d4b1ad43465a20bc76246aa0e31b81db0)]:
+  - @swapkit/helpers@1.12.1
+  - @swapkit/toolbox-evm@1.5.4
+  - @swapkit/api@1.9.2
+
 ## 1.1.24
 
 ### Patch Changes

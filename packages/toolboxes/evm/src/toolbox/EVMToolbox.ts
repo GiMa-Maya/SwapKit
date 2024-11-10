@@ -11,18 +11,22 @@ import {
   erc20ABI,
   isGasAsset,
 } from "@swapkit/helpers";
-import type {
-  ContractTransaction,
-  Fragment,
-  HDNodeWallet,
-  JsonFragment,
-  JsonRpcSigner,
-  Provider,
-  Signer,
+import {
+  BrowserProvider,
+  Contract,
+  type ContractTransaction,
+  type Fragment,
+  type HDNodeWallet,
+  Interface,
+  type JsonFragment,
+  type JsonRpcSigner,
+  MaxInt256,
+  type Provider,
+  type Signer,
+  getAddress,
+  hexlify,
+  toUtf8Bytes,
 } from "ethers";
-import { BrowserProvider, Contract, Interface, hexlify, toUtf8Bytes } from "ethers";
-import { getAddress } from "ethers/address";
-import { MaxInt256 } from "ethers/constants";
 
 import {
   type ARBToolbox,
@@ -107,7 +111,7 @@ const call = async <T>(
     abi,
     funcName,
     funcParams = [],
-    txOverrides,
+    txOverrides = {},
     feeOption = FeeOption.Fast,
   }: WithSigner<CallParams>,
 ): Promise<T> => {
@@ -115,6 +119,10 @@ const call = async <T>(
   if (!contractAddress) throw new Error("contractAddress must be provided");
 
   const isStateChanging = isStateChangingCall(abi, funcName);
+  const overridesParams = {
+    ...txOverrides,
+    from: txOverrides?.from || (await signer?.getAddress()),
+  };
 
   if (isStateChanging && isBrowserProvider(contractProvider) && signer) {
     const txObject = await createContractTxObject(contractProvider, {
@@ -122,7 +130,7 @@ const call = async <T>(
       abi,
       funcName,
       funcParams,
-      txOverrides,
+      txOverrides: overridesParams,
     });
 
     return EIP1193SendTransaction(contractProvider, txObject) as Promise<T>;
